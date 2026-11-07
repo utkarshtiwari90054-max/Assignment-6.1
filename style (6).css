@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: #1e2430;
+  background: #eef1f6;
+  padding: 24px;
+}
+
+header { margin-bottom: 24px; max-width: 700px; }
+header h1 { margin-bottom: 8px; }
+
+/* Flex layout keeps margins from collapsing so they are easy to see */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background: repeating-linear-gradient(45deg, #fff, #fff 8px, #f3e7d0 8px, #f3e7d0 16px);
+}
+
+/* Shared rules: same width and look, boxes differ only below */
+.box {
+  width: 250px;
+  background: #cfe3f7;
+  border-style: solid;
+  border-color: #243b6b;
+}
+
+.box h2 { font-size: 1.25rem; margin-bottom: 8px; }
+.box p  { margin-bottom: 8px; }
+.size   { font-weight: 700; }
+
+/* Box A: content-box (the browser default) */
+.box-a {
+  box-sizing: content-box;
+  padding: 20px;
+  border-width: 5px;
+  margin: 10px;
+}
+
+/* Box B: content-box with larger padding, border and margin */
+.box-b {
+  box-sizing: content-box;
+  padding: 40px;
+  border-width: 10px;
+  margin: 30px;
+  background: #d8f0d2;
+}
+
+/* Box C: border-box, so width includes padding and border */
+.box-c {
+  box-sizing: border-box;
+  padding: 30px;
+  border-width: 8px;
+  margin: 20px;
+  background: #fbe0c7;
+}

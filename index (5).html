@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Box Model Inspection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Box Model Inspection</h1>
+    <p>Each box below is <code>width: 250px</code>. Open Chrome DevTools (F12), select a box and look at the box model diagram in the Computed tab.</p>
+  </header>
+
+  <main class="boxes">
+    <article class="box box-a">
+      <h2>Box A</h2>
+      <p>content-box, padding 20px, border 5px, margin 10px.</p>
+      <p class="size">Measured width: <span></span></p>
+    </article>
+
+    <article class="box box-b">
+      <h2>Box B</h2>
+      <p>content-box, padding 40px, border 10px, margin 30px.</p>
+      <p class="size">Measured width: <span></span></p>
+    </article>
+
+    <article class="box box-c">
+      <h2>Box C</h2>
+      <p>border-box, padding 30px, border 8px, margin 20px.</p>
+      <p class="size">Measured width: <span></span></p>
+    </article>
+  </main>
+
+  <script>
+    // Show each box's rendered border-box width (content + padding + border)
+    document.querySelectorAll(".box").forEach(function (box) {
+      box.querySelector(".size span").textContent =
+        box.getBoundingClientRect().width + "px";
+    });
+  </script>
+</body>
+</html>
